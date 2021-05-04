@@ -4,6 +4,17 @@ const mockAPIResponse = require('./mockAPI.js')
 
 const app = express()
 
+const dotenv = require('dotenv');
+const result = dotenv.config();
+
+if (result.error) {
+    throw result.error;
+}
+
+// console.log(result.parsed);
+// console.log(`Your API key is ${process.env.API_KEY}`);
+
+
 app.use(express.static('dist'))
 
 console.log(__dirname)
