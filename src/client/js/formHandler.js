@@ -1,14 +1,17 @@
 const baseUrl = 'http://localhost:8081/sentiment?url=';
 const errorMsgSpan = document.querySelector('.error-message');
 
-errorMsgSpan.style.display = 'none';
 
-if (document.querySelector('#model').innerHTML == '') {
-    document.querySelector('#resultsSection').style.display = 'none';
-}
-else {
-    document.querySelector('#resultsSection').style.display = '';
-}
+document.addEventListener('DOMContentLoaded', function () {
+    errorMsgSpan.style.display = 'none';
+
+    if (document.querySelector('#model').innerHTML == '') {
+        document.querySelector('#resultsSection').style.display = 'none';
+    }
+    else {
+        document.querySelector('#resultsSection').style.display = '';
+    }
+});
 
 function handleSubmit(event) {
     event.preventDefault();
