@@ -9,31 +9,44 @@
 <body>
 
     <header>
-        <div class="">
-            Logo
+        <div class="logo">
+            <img alt="Udacity Logo" src="//s3-us-west-1.amazonaws.com/udacity-content/rebrand/svg/logo.min.svg">
         </div>
         <div class="">
-            navigation
+
         </div>
     </header>
 
     <main>
         <section>
             <form class="" onsubmit="return Client.handleSubmit(event)">
-                <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)"
+                <input id="url" type="text" name="input" value="" placeholder="Article URL">
+                <div class="error-message">Invalid article Url, please check Url</div>
+                <input type="submit" name="" value="Analyze Article" onclick="return Client.handleSubmit(event)"
                     onsubmit="return Client.handleSubmit(event)">
             </form>
         </section>
 
-        <section>
-            <strong>Form Results:</strong>
-            <div id="results"></div>
+        <section id="resultsSection">
+            <strong>Results:</strong>
+            <div id="results">
+                Model: <label id="model"></label>
+                <br>
+                Score Tag: <label id="score_tag"></label>
+                <br>
+                Agreement: <label id="agreement"></label>
+                <br>
+                Subjectivity: <label id="subjectivity"></label>
+                <br>
+                Confidence: <label id="confidence"></label>
+                <br>
+                Irony: <label id="irony"></label>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>This is a footer</p>
+        <p></p>
     </footer>
 
 </body>

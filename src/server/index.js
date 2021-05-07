@@ -7,6 +7,9 @@ const fetch = require('node-fetch');
 const app = express();
 app.use(express.static('dist'));
 
+const cors = require('cors');
+app.use(cors());
+
 const result = dotenv.config();
 if (result.error) {
     throw result.error;
