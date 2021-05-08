@@ -1,11 +1,10 @@
 const baseUrl = 'http://localhost:8081/sentiment?url=';
 const errorMsgSpan = document.querySelector('.error-message');
 
-
 document.addEventListener('DOMContentLoaded', function () {
     errorMsgSpan.style.display = 'none';
 
-    if (document.querySelector('#model').innerHTML == '') {
+    if (document.querySelector('#modelText').innerHTML == '') {
         document.querySelector('#resultsSection').style.display = 'none';
     }
     else {
@@ -13,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-function handleSubmit(event) {
+function analyzeArticleClick(event) {
     event.preventDefault();
 
     if (!validateUrlInput())
@@ -21,23 +20,18 @@ function handleSubmit(event) {
 
     // check what text was put into the form field
     const articleUrl = document.querySelector('#url').value;
-    //Client.checkForName(formText)
-
     const apiUrl = `${baseUrl}${articleUrl}`;
-    // https://www.freecodecamp.org/news/async-await-in-javascript/
-
-    console.log("::: Form Submitted :::");
 
     fetch(apiUrl)
         .then(res => res.json())
         .then(function (res) {
             document.querySelector('#resultsSection').style.display = '';
-            document.querySelector('#model').innerHTML = res.model;
-            document.querySelector('#score_tag').innerHTML = res.score_tag;
-            document.querySelector('#agreement').innerHTML = res.agreement;
-            document.querySelector('#subjectivity').innerHTML = res.subjectivity;
-            document.querySelector('#confidence').innerHTML = res.confidence;
-            document.querySelector('#irony').innerHTML = res.irony;
+            document.querySelector('#modelText').innerHTML = res.model;
+            document.querySelector('#scoreTagText').innerHTML = res.score_tag;
+            document.querySelector('#agreementText').innerHTML = res.agreement;
+            document.querySelector('#subjectivityText').innerHTML = res.subjectivity;
+            document.querySelector('#confidenceText').innerHTML = res.confidence;
+            document.querySelector('#ironyText').innerHTML = res.irony;
         });
 }
 
@@ -52,4 +46,4 @@ function validateUrlInput() {
     return false;
 }
 
-export { handleSubmit }
+export { analyzeArticleClick }

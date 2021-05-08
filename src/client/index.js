@@ -1,4 +1,4 @@
-import { handleSubmit } from './js/formHandler';
+import { analyzeArticleClick } from './js/formSubmit';
 import { urlIsValid } from './js/urlValidation';
 import './styles/resets.scss';
 import './styles/base.scss';
@@ -11,5 +11,5 @@ import './styles/header.scss';
 
 export {
     urlIsValid,
-    handleSubmit
+    analyzeArticleClick
 }

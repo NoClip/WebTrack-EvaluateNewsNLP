@@ -19,28 +19,28 @@
 
     <main>
         <section>
-            <form class="" onsubmit="return Client.handleSubmit(event)">
+            <form class="" onsubmit="return Client.analyzeArticleClick(event)">
                 <input id="url" type="text" name="input" value="" placeholder="Article URL">
                 <div class="error-message">Invalid article Url, please check Url</div>
-                <input type="submit" name="" value="Analyze Article" onclick="return Client.handleSubmit(event)"
-                    onsubmit="return Client.handleSubmit(event)">
+                <input type="submit" name="" value="Analyze Article" onclick="return Client.analyzeArticleClick(event)"
+                    onsubmit="return Client.analyzeArticleClick(event)">
             </form>
         </section>
 
         <section id="resultsSection">
             <strong>Results:</strong>
             <div id="results">
-                Model: <label id="model"></label>
+                Model: <label id="modelText"></label>
                 <br>
-                Score Tag: <label id="score_tag"></label>
+                Score Tag: <label id="scoreTagText"></label>
                 <br>
-                Agreement: <label id="agreement"></label>
+                Agreement: <label id="agreementText"></label>
                 <br>
-                Subjectivity: <label id="subjectivity"></label>
+                Subjectivity: <label id="subjectivityText"></label>
                 <br>
-                Confidence: <label id="confidence"></label>
+                Confidence: <label id="confidenceText"></label>
                 <br>
-                Irony: <label id="irony"></label>
+                Irony: <label id="ironyText"></label>
             </div>
         </section>
     </main>

@@ -13,6 +13,9 @@ if (dotEnvResult.error) {
 const apiKey = process.env.API_KEY;
 const baseUrl = `https://api.meaningcloud.com/sentiment-2.1?lang=en&key=${apiKey}`;
 
+const cors = require('cors');
+app.use(cors());
+
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 });
